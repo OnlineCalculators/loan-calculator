@@ -1,0 +1,248 @@
+// CSS Reset
+@import "reset.less";
+
+// ----- Variables -----
+
+@bgColor:				 #eee;
+@headerColor:     #D14836;
+
+@baseFontSize:          14px;
+@baseFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+@baseLineHeight:        18px;
+
+
+// --- STRUCTURAL LAYOUT  ---
+body {
+  margin: 0;
+  font-family: @baseFontFamily;
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  background-color: @bgColor;
+}
+
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+.hide{
+	display: none;
+}
+
+#site-width{
+  width:660px;
+  margin-left: auto;
+  margin-right: auto;
+  .clearfix();
+}
+
+#content {
+  margin:20px auto;
+  padding:20px;
+  .clearfix();
+  width:80%;
+  text-align: center;
+  background:#fff;
+  .border-radius(3px);
+  .box-shadow(0 1px 3px rgba(34, 25, 25, 0.4));
+}
+
+#header{
+  background: @headerColor;
+  text-align:center;
+  .box-shadow(0 1px 3px rgba(34, 25, 25, 0.4));
+  .3d;
+  padding:5px 0;
+}
+
+#header h1 {
+  color:#fff;
+  font-size:26px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+  margin: 0;
+  line-height: @baseLineHeight * 2;
+  text-rendering: optimizelegibility; // Fix the character spacing for heading
+}
+
+
+// ----- CSS3 PROPERTIES -----
+
+// Border Radius
+.border-radius(@radius: 5px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+// Drop shadows
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+  -webkit-box-shadow: @shadow;
+     -moz-box-shadow: @shadow;
+          box-shadow: @shadow;
+}
+
+/* Create 3d effect */
+.3d{
+  background-repeat: repeat-x;
+  background-image: -khtml-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.15)));
+  background-image: -moz-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-image: -ms-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(0, 0, 0, 0.15)));
+  background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-image: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.15));
+}
+
+// ------ FORMS -----
+.form-block {
+  margin:20px auto 0 auto;
+}
+
+label, input{
+  font-size:15px;
+  display: inline-block;
+  height: 32px;
+  color: #777;
+  text-align:left;
+}
+
+label {
+  color:#666;
+  line-height: 32px;
+  vertical-align:middle;
+  margin-left:7px;
+  .left;
+  width:40%;
+  font-size:14px;
+}
+
+label#amount{
+  font-weight:bold;
+  width:30%
+}
+
+label#percent{
+  width:10px;
+}
+
+input{
+  margin: 0;
+  padding:0 5px;
+  border:1px solid #ddd;
+  background:#fafafa;
+  .border-radius(3px);
+  .left;
+  width:50%;
+}
+
+input#interest,input#time{
+  width:20%;
+}
+
+
+// ------ NAV ------
+
+.btn-group{
+  font-size:0;
+  margin-bottom:10px;
+}
+
+.btn, #calculate_btn {
+  margin:0;
+  padding:0;
+  outline:0;
+  line-height:34px;
+  color: @headerColor;
+  text-align: center;
+  font-weight:bold;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  vertical-align: middle;
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+  background-image: linear-gradient(top, #ffffff, #e6e6e6);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  border: 1px solid #ccc;
+  border-bottom-color: #bbb;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  text-decoration:none;
+  width:49%;
+  display:inline-block;
+  font-size:15px;
+}
+
+.btn-group .btn:first-child {
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.btn-group .btn:last-child {
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.btn:active, .btn.active {
+  background-color: #cccccc \9;
+  background-image: none;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+  background-color: #e6e6e6;
+  background-color: #d9d9d9 \9;
+  outline: 0;
+}
+
+#calculate_btn{
+  .border-radius(5px);
+  width:100%;
+}
+
+// ------- Media for Phones etc -----
+
+@media (max-width: 480px) {
+  #site-width{
+    width:100%;
+  }
+
+  label {
+    width:55%;
+  }
+  input{
+    width:35%;
+  }
+
+}

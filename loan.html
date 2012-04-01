@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
+	<title>Loan Calculator</title>
+	<meta name="description" content="Loan Calculator">
+	<meta name="author" content="">
+	<meta name="Copyright" content="Copyright Your Name Here 2012. All Rights Reserved.">
+
+	<link rel="shortcut icon" href="img/favicon.png">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon-precomposed.png">
+
+	<link rel="stylesheet" href="css/style_min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="js/calc.min.js"></script>
+
+</head>
+<body>
+<header id="header">
+	<h1>loan calculator</h1>
+</header>
+
+<section id="site-width">
+	<div id="content">
+
+		<nav class="btn-group clearfix">
+      		<a class="btn active" id="repayment" href="#">Repayment</a>
+      		<a class="btn" id="interest_only" href="#">Interest Only</a>
+		</nav>
+
+		<div class="form-block clearfix">
+			<label for="loan_amount">Loan Amount:</label>
+           	<input id="loan_amount" type="tel" />
+        </div>
+
+		<div class="form-block clearfix">
+			<label for="interest">Interest Rate:</label>
+           	<input id="interest" />
+			<label id="percent">%</label>
+        </div>
+
+        <div class="form-block clearfix">
+			<label for="time">Years:</label>
+           	<input id="time" type="tel" />
+        </div>
+
+        <div class="form-block clearfix">
+			<label>Monthly Repayment:</label>
+           	<label id="amount">&#8356; <span> </span></label>
+        </div>
+
+		<div class="form-block clearfix">
+      		<a id="calculate_btn" href="#">Calculate</a>
+		</div>
+
+    </div>	<!-- end #content -->
+</section>
+
+</body>
+</html>
